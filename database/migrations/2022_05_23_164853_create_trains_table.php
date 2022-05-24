@@ -20,11 +20,11 @@ class CreateTrainsTable extends Migration
             $table->string("azienda");
             $table->string("stazione_di_partenza");
             $table->string("stazione_di_arrivo");
-            $table->string("orario_di_partenza");
-            $table->string("orario_di_arrivo");
-            $table->string("numero_di_carrozze");
-            $table->string("in_orario");
-            $table->string("cancellato");
+            $table->datetime("orario_di_partenza");
+            $table->datetime("orario_di_arrivo");
+            $table->tinyInteger("numero_di_carrozze");
+            $table->boolean("in_orario");
+            $table->boolean("cancellato");
         });
     }
 
@@ -36,5 +36,14 @@ class CreateTrainsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('trains');
+            $table->string("codice_treno");
+            $table->string("azienda");
+            $table->string("stazione_di_partenza");
+            $table->string("stazione_di_arrivo");
+            $table->datetime("orario_di_partenza");
+            $table->datetime("orario_di_arrivo");
+            $table->tinyInteger("numero_di_carrozze");
+            $table->boolean("in_orario");
+            $table->boolean("cancellato");
     }
 }
